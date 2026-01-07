@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurant App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 class="title">🍴 Welcome to Our Restaurant</h2>
+<h1 class="title" style="color: bisque;">BHANSHA-GHAR</h1>
+
+
+<div class="container">
+  <div class="tile veg" onclick="showVegMenu()">
+    <span>Menu</span>
+  </div>
+
+  <div class="tile specials" onclick="loadRandomCategory()">
+    <span>Specials</span>
+    <p id="special-text">Click to get today’s special!</p>
+  </div>
+
+  <div class="tile map" onclick="showMap()">
+    <span>Map</span>
+    <p>Find Us</p>
+  </div>
+</div>
+
+<div id="output" style="align-content: center;">Fresh • Tasty • 100% Hygienic</div>
+
+<script src="script.js"></script>
+</body>
+</html>
