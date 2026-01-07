@@ -1,0 +1,153 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  background-image: url(food.jpg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+/* Title */
+.title {
+  margin-top: 25px;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  animation: fadeDown 1s ease;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* Container */
+.container {
+  display: flex;
+  gap: 35px;
+  margin-top: 80px;
+}
+
+/* Tile Base */
+.tile {
+  width: 220px;
+  height: 160px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(0,0,0,0.35), rgba(0,0,0,0.6));
+  backdrop-filter: blur(6px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+/* Hover Effect */
+.tile:hover {
+  transform: translateY(-12px) scale(1.07);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.6);
+}
+
+/* Light Sweep Effect */
+.tile::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 50%;
+  height: 200%;
+  background: rgba(255,255,255,0.15);
+  transform: rotate(25deg);
+  transition: left 0.6s ease;
+}
+
+.tile:hover::before {
+  left: 130%;
+}
+
+/* Tile Text */
+.tile span,
+.tile {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.tile p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Specials Tile */
+.specials {
+  background: linear-gradient(145deg, #ffd700, #ff8c00);
+  color: #2b2b2b;
+  animation: pulse 2s infinite;
+}
+
+/* Pulse animation for specials */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 rgba(255,215,0,0.6); }
+  50% { box-shadow: 0 0 30px rgba(255,215,0,0.9); }
+  100% { box-shadow: 0 0 0 rgba(255,215,0,0.6); }
+}
+
+/* Click Effect */
+.tile:active {
+  transform: scale(0.95);
+}
+
+/* Fade animation */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+/* Veg Menu */
+.veg {
+  background: linear-gradient(145deg, #2ecc71, #27ae60);
+  animation: glowGreen 2s infinite;
+}
+
+@keyframes glowGreen {
+  0% { box-shadow: 0 0 0 rgba(46,204,113,0.6); }
+  50% { box-shadow: 0 0 25px rgba(46,204,113,0.9); }
+  100% { box-shadow: 0 0 0 rgba(46,204,113,0.6); }
+}
+
+/* Map Tile */
+.map {
+  background: linear-gradient(145deg, #3498db, #2980b9);
+}
+
+/* Output Section */
+#output {
+  margin-top: 50px;
+  padding: 20px;
+  width: 30%;
+  background: rgba(0,0,0,0.4);
+  border-radius: 15px;
+  animation: fadeDown 0.6s ease;
+}
